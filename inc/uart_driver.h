@@ -1,6 +1,7 @@
 // C library headers
 #include <stdio.h>
-#include "string.h"
+#include <string>
+#include <cstring> //std::strerror
 
 // Linux headers
 #include <fcntl.h> // Contains file controls like O_RDWR
@@ -16,12 +17,5 @@
 
 class UartDevice {
 	public:
-		UartDevice::UartDevice(string device_id) {
-			int serial_port = open(device_id, O_RDWR);
-
-			// Check for errors
-			if (serial_port < 0) {
-				printf("Error %i from open: %s\n", errno, strerror(errno));
-			}
-	}
+		UartDevice(const char* device_id);
 };
