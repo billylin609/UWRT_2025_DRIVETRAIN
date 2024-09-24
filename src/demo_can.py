@@ -14,7 +14,7 @@ def send_one():
     # this uses the default configuration (for example from the config file)
     # see https://python-can.readthedocs.io/en/stable/configuration.html
     # Using specific buses works similar:
-    bus = can.Bus(bustype='serial', channel='/dev/ttyS0', bitrate=10000)
+    bus = can.Bus(bustype='serial', channel='/dev/ttyS0', bitrate=250000)
 
     msg = can.Message(arbitration_id=0x01,
         data=[0, 25, 0, 1, 3, 1, 4, 1])
